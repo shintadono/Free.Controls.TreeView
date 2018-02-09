@@ -117,6 +117,9 @@ namespace Free.Controls.TreeView.Tree
 		public int GetRowAt(Point point)
 		{
 			int py=point.Y-_treeView.ColumnHeaderHeight;
+			if (py < 0)
+				return -1; 
+				
 			int y=0;
 			for(int i=_treeView.FirstVisibleRow; i<_treeView.RowCount; i++)
 			{
